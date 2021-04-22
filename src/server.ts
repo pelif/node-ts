@@ -1,9 +1,9 @@
-import App from './App'; 
+import App from './app.config'; 
 import * as bodyParser from 'body-parser';
 import morgan from 'morgan';
 
 import myMiddleware from './middlewares/log.middleware'; 
-import HomeController from './controllers/HomeController'; 
+import TaskController from './controllers/task.controller'; 
 
 const app = new App({
     port: 3000, 
@@ -14,7 +14,7 @@ const app = new App({
         myMiddleware
     ],
     controllers: [
-        new HomeController()
+        new TaskController()
     ]
 });
 
